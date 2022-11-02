@@ -35,10 +35,8 @@ repo_name: Book # 右上角的名字
 
 # [Navigtion]
 nav:
-  - 1: MAIN/connect.md
-  - two articles:
-    - MAIN/2.md
-    - MAIN/3.md
+  - MAIN/connect.md
+  - MAIN/compile.md
 
 # [Extensions]
 plugins:
