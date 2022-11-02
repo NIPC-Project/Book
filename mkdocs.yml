@@ -36,6 +36,7 @@ repo_name: Book # 右上角的名字
 # [Navigtion]
 nav:
   - CONNECT/connect.md
+  - CONNECT/files.md
   - CONNECT/internet.md
   - PROGRAM/compile.md
   - PROGRAM/default-programs.md
