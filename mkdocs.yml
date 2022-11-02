@@ -35,8 +35,11 @@ repo_name: Book # 右上角的名字
 
 # [Navigtion]
 nav:
-  - MAIN/connect.md
-  - MAIN/compile.md
+  - CONNECT/connect.md
+  - CONNECT/internet.md
+  - PROGRAM/compile.md
+  - PROGRAM/default-programs.md
+  - PROGRAM/install-programs.md
 
 # [Extensions]
 plugins:
