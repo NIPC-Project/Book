@@ -1,5 +1,5 @@
 # [Info]
-site_name: NIPC毕设手册 # 左上角标题
+site_name: NIPC毕设 # 左上角标题
 
 # [UI]
 ## [top]
@@ -35,12 +35,17 @@ repo_name: Book # 右上角的名字
 
 # [Navigtion]
 nav:
-  - CONNECT/connect.md
-  - CONNECT/files.md
-  - CONNECT/internet.md
-  - PROGRAM/compile.md
-  - PROGRAM/default-programs.md
-  - PROGRAM/install-programs.md
+  - NIPC开发板:
+    - NIPC/connect.md
+    - NIPC/info.md
+    - NIPC/files.md
+    - NIPC/internet.md
+  - HiLinux编译:
+    - PROGRAM/compile.md
+    - PROGRAM/default-programs.md
+    - PROGRAM/install-programs.md
+  - 更多信息:
+    - MORE/glossary.md
 
 # [Extensions]
 plugins:

@@ -1,10 +1,12 @@
-# 板卡和电脑传输文件
+# NIPC开发板和电脑传输文件
+
+使用ftp协议传输文件即可。
 
 ## macOS安装ftp
 
-```
-brew unlink telnet # 先将本机原本的telnet取消链接
-brew install inetutils # 再安装所有的网络工具 其中包含telnet和ftp
+```sh
+$ brew unlink telnet # 先将本机原本的telnet取消链接
+$ brew install inetutils # 再安装所有的网络工具 其中包含telnet和ftp
 ```
 
 然后就可以使用命令行的ftp来传输了
