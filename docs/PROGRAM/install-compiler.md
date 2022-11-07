@@ -68,7 +68,7 @@ warranty; not even for MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
 #include <stdio.h>
 
 int main() {
-  printf("Hello.");
+  printf("Hello, world.\n");
   return 0;
 }
 ```

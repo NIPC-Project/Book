@@ -5,7 +5,7 @@ $ echo $PATH
 /usr/bin:/usr/sbin:/bin:/sbin
 ```
 
-```
+```sh
 $ /usr/bin
 [            clear        envdir       hd           lpq          nc           pscan        setkeycodes  strings      top          unxz         whois
 [[           cmp          envuidgid    head         lpr          nl           pstree       setsid       sum          tr           unzip        xargs
