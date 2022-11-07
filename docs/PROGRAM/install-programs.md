@@ -1,6 +1,6 @@
 # 安装程序
 
-## 安装miniconda
+## 安装miniconda（已失败 不继续推进）
 
 https://docs.conda.io/en/latest/miniconda.html  ->  Miniconda3 Linux-aarch64 64-bit
 

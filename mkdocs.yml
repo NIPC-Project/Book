@@ -41,8 +41,9 @@ nav:
     - NIPC/files.md
     - NIPC/internet.md
   - HiLinux编译:
-    - PROGRAM/compile.md
+    - PROGRAM/install-compiler.md
     - PROGRAM/default-programs.md
+    - PROGRAM/compile-python.md
     - PROGRAM/install-programs.md
   - 更多信息:
     - MORE/glossary.md
