@@ -1,6 +1,28 @@
 # [Info]
 site_name: NIPC毕设 # 左上角标题
 
+# [Navigtion]
+nav:
+  - NIPC开发板:
+    - NIPC/connect.md
+    - NIPC/connect-xilinx-usb.md
+    - NIPC/connect-camera.md
+  - HiLinux:
+    - HILINUX/info.md
+    - HILINUX/default-programs.md
+    - HILINUX/files.md
+    - HILINUX/internet.md
+    - HILINUX/shell-profile.md
+  - 编译:
+    - COMPILE/install-compiler.md
+    - COMPILE/compile-python.md
+  - Python:
+    - PYTHON/http-server.md
+    - PYTHON/pypng.md
+    - PYTHON/base64.md
+  - 更多信息:
+    - MORE/glossary.md
+
 # [UI]
 ## [top]
 theme:
@@ -32,20 +54,6 @@ edit_uri: edit/main/docs # 编辑按钮跳转的链接
 ## [top-right corner]
 repo_url: https://github.com/NIPC-Project/Book # 右上角点击跳转的链接
 repo_name: Book # 右上角的名字
-
-# [Navigtion]
-nav:
-  - NIPC开发板:
-    - NIPC/connect.md
-    - NIPC/info.md
-    - NIPC/files.md
-    - NIPC/internet.md
-  - HiLinux编译:
-    - PROGRAM/install-compiler.md
-    - PROGRAM/default-programs.md
-    - PROGRAM/compile-python.md
-  - 更多信息:
-    - MORE/glossary.md
 
 # [Extensions]
 plugins:

@@ -1,4 +1,4 @@
-# 板卡默认安装程序
+# HiLinux默认安装程序
 
 ```sh
 $ echo $PATH

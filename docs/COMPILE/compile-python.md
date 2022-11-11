@@ -1,4 +1,4 @@
-# 交叉编译Python
+# 使用HiLinux编译工具链交叉编译Python3.6
 
 > 使用的话直接下载 <https://cloud.tsinghua.edu.cn/f/760cb0bff40144e6b460/>
 > 

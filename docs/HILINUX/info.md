@@ -1,4 +1,4 @@
-# 查看NIPC开发板信息
+# HiLinux系统信息
 
 ```sh
 $ uname -a # 查看本机架构

@@ -1,6 +1,6 @@
-# shell添加profile
+# sh添加profile
 
-```
+```sh
 vi /root/.profile
 source /root/.profile
 ```
