@@ -20,6 +20,9 @@ nav:
     - PYTHON/http-server.md
     - PYTHON/pypng.md
     - PYTHON/base64.md
+  - 工程:
+    - PROJECTS/project-image.md
+    - PROJECTS/project-video.md
   - 更多信息:
     - MORE/glossary.md
 
