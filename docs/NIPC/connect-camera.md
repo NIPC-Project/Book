@@ -32,6 +32,8 @@
 
 #### 无License
 
+![](images-connect-camera/license-error.png)
+
 ```
 [Common 17-345] A valid license was not found for feature 'Synthesis' and/or device 'xcku060'. Please run the Vivado License Manager for assistance in determining
 which features and devices are licensed for your system.
