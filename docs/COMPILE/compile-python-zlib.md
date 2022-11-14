@@ -1,6 +1,6 @@
 # 编译带有zlib的Python3.6.15
 
-> 直接使用链接 [HiLinux-Python3.6.15.tar](https://cloud.tsinghua.edu.cn/f/9b269478ff794cef9aa1/)
+> 直接使用链接 [HiLinux-Python3.6.15.tar](https://cloud.tsinghua.edu.cn/f/9b269478ff794cef9aa1/) [HiLinux-zlib.tar](https://cloud.tsinghua.edu.cn/f/7cfc12ba6b8b47ffa304/)
 
 由于实验中需要使用 pypng 这个库，这个库依赖 `zlib`，所以需要在 Python 的模块中加入 zlib
 
@@ -172,23 +172,57 @@ Segmentation fault (core dumped)
 make: *** [Makefile:1102: install] Error 139
 ```
 
-## 打包Python
+## 打包Python和zlib库文件
 
 ```sh
-$ tar -cf HiLinux-Python3.6.15.tar $HOME/Desktop/HiLinux-Python3.6.15
+$ cd $HOME/Desktop/
+$ tar -cf HiLinux-Python3.6.15.tar HiLinux-Python3.6.15
+$ tar -cf HiLinux-zlib.tar HiLinux-zlib
 ```
 
-将 HiLinux-Python3.6.15.tar 用 ftp 传到 HiLinux 上。
+将 HiLinux-Python3.6.15.tar 和 HiLinux-zlib.tar 用 ftp 传到 HiLinux 上并解压：
 
 ```sh
 $ tar -xf HiLinux-Python3.6.15.tar
-$ cd python3.6/bin
-$ ls
-2to3               pydoc3             python3.6          pyvenv
-2to3-3.6           pydoc3.6           python3.6-config   pyvenv-3.6
-idle3              python3            python3.6m
-idle3.6            python3-config     python3.6m-config
+$ tar -xf HiLinux-zlib.tar
 ```
+
+### 设置环境变量
+
+在 `~/.profile` 中添加：
+
+```
+alias python3=/root/yxj/SOFTWARE/HiLinux-Python3.6.15/bin/python3.6
+alias python=/root/yxj/SOFTWARE/HiLinux-Python3.6.15/bin/python3.6
+```
+
+执行 `python -V` 发现报错：
+
+```
+$ python -V
+/root/yxj/SOFTWARE/HiLinux-Python3.6.15/bin/python3.6: error while loading shared libraries: libz.so.1: cannot open shared object file: No such file or directory
+```
+
+在 `~/.profile` 中添加：
+
+```
+export LD_LIBRARY_PATH="$LD_LIBRARY_PATH:/root/yxj/SOFTWARE/HiLinux-zlib/lib"
+```
+
+这次没问题了，`import` 也是可以用的：
+
+```
+$ python -V
+Python 3.6.15
+$ python
+Python 3.6.15 (default, Nov 14 2022, 14:45:02)
+[GCC 7.3.0] on linux
+Type "help", "copyright", "credits" or "license" for more information.
+>>> import zlib
+>>>
+```
+
+> 备注：也可以在 /etc/profile 内直接改环境变量。
 
 ## 参考资料
 
