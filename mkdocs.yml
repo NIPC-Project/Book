@@ -16,6 +16,7 @@ nav:
   - 编译:
     - COMPILE/install-compiler.md
     - COMPILE/compile-python.md
+    - COMPILE/compile-python-zlib.md
   - Python:
     - PYTHON/http-server.md
     - PYTHON/pypng.md
