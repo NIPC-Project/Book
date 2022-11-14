@@ -1,5 +1,9 @@
 # 编译带有zlib的Python3.6.15
 
+> 已归档。请直接查看 [包含zlib的Python3.10.8构建方法](./compile-python-310zlib.md)
+
+---
+
 > 直接使用链接 [HiLinux-Python3.6.15.tar](https://cloud.tsinghua.edu.cn/f/9b269478ff794cef9aa1/) [HiLinux-zlib.tar](https://cloud.tsinghua.edu.cn/f/7cfc12ba6b8b47ffa304/)
 
 由于实验中需要使用 pypng 这个库，这个库依赖 `zlib`，所以需要在 Python 的模块中加入 zlib

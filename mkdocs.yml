@@ -17,6 +17,7 @@ nav:
     - COMPILE/install-compiler.md
     - COMPILE/compile-python.md
     - COMPILE/compile-python-zlib.md
+    - COMPILE/compile-python-310zlib.md
   - Python:
     - PYTHON/http-server.md
     - PYTHON/pypng.md
