@@ -1,6 +1,6 @@
 # 使用HiLinux编译工具链交叉编译Python3.6.8
 
-> 已归档。请查看 [包含zlib的Python3.6.15构建方法](./compile-python-zlib.md)，结合本文的详细步骤使用。
+> 已归档。请查看 包含zlib的Python3.6.15构建方法 ，结合本文的详细步骤使用。
 
 ---
 
