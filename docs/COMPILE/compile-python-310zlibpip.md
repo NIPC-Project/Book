@@ -1,4 +1,4 @@
-# 编译带有zlib的Python3.10.8
+# 交叉编译Python3.10.8 含pip和zlib
 
 请使用 `Ubuntu 22.04`，这个版本测试成功编译。
 
