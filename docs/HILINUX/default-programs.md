@@ -1,4 +1,4 @@
-# HiLinux默认安装程序
+# 系统默认安装的程序
 
 ```sh
 $ echo $PATH

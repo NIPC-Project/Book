@@ -3,9 +3,11 @@ site_name: NIPC毕设 # 左上角标题
 
 # [Navigtion]
 nav:
+  - 工程:
+    - PROJECTS/project-image.md
+    - PROJECTS/project-video.md
   - NIPC开发板:
     - NIPC/connect.md
-    - NIPC/connect-xilinx-usb.md
     - NIPC/connect-camera.md
   - HiLinux:
     - HILINUX/info.md
@@ -13,16 +15,18 @@ nav:
     - HILINUX/files.md
     - HILINUX/internet-macos-sharing.md
     - HILINUX/shell-profile.md
-  - 编译:
+  - HiLinux交叉编译:
     - COMPILE/install-compiler.md
     - COMPILE/compile-python-310zlibpip.md
+  - Vivado:
+    - VIVADO/install.md
+    - VIVADO/license.md
+    - VIVADO/connect-xilinx-usb.md
+    - VIVADO/program-device.md
   - Python:
     - PYTHON/http-server.md
     - PYTHON/pypng.md
     - PYTHON/base64.md
-  - 工程:
-    - PROJECTS/project-image.md
-    - PROJECTS/project-video.md
   - 更多信息:
     - MORE/glossary.md
 
