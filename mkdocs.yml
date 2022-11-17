@@ -27,6 +27,8 @@ nav:
     - PYTHON/http-server.md
     - PYTHON/pypng.md
     - PYTHON/base64.md
+  - FPGA:
+    - FPGA/blogs.md
   - 更多信息:
     - MORE/glossary.md
 
