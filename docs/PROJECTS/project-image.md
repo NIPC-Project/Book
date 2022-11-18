@@ -4,13 +4,15 @@
 
 ## 整体架构
 
-### HiLinux/FPGA常驻
+### HiLinux/FPGA 常驻程序
 
 - FPGA 随时处于就绪状态，能够随时执行YOLOv3算法
     - 先使用 Vivado Program Device
-    - 再 reboot HiLinux
+    - 再 `reboot` HiLinux
 - HiLinux 开启一个 HTTP server，监听 PC 传输图片数据
     - 需要先加载 xdma 内核才能调用 xdma 的库
+        - `insmod xdma.ko`
+    - `./pcie-image.out`
 
 ### 整体网络传输
 
@@ -37,16 +39,25 @@
 
 #### 像素数组
 
-宽608高608的图片，共有608x608个像素，一维像素数组的长度为608x608x3，每相邻的三个值表示对应位置像素的rgb三个分量。（注：Python-bytes C-char[]）
+宽608高608的图片，共有608x608个像素，一维像素数组的长度为608x608x3，每相邻的三个值表示对应位置像素的rgb三个分量。
+
+注：`Python - bytes` `C - char[]`
 
 #### 识别结果
 
-```
-struct {
-  top_left_x: uint32
-  top_left_y: uint32
-  width: uint32
-  height: uint32
-  label: String
+```c
+struct RecognitionResult {
+    count: uint32 // 识别结果的数量
+    items: [Item] // 识别出的物体的数组
+}
+
+struct Item {
+    top_left_x: uint32
+    top_left_y: uint32
+    width: uint32
+    height: uint32
+    label: char[32]
 }
 ```
+
+
