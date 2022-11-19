@@ -78,12 +78,30 @@ $ ./compile-python.sh
 
 ## 查看效果
 
+打开 HiLinux：
+
 ```sh
-$ python -V
+$ which python3
+/root/yxj/SOFTWARE/libraries/bin/python3
+$ python3 -V
 Python 3.10.8
-$ python -m ensurepip --default-pip # 初始化pip
-$ pip -V
-pip 22.2.2 from /root/yxj/SOFTWARE/HiLinux-Python3.10.8/lib/python3.10/site-packages/pip (python 3.10)
+$ python3
+Python 3.10.8 (main, Nov 19 2022, 18:09:06) [GCC 7.3.0] on linux
+Type "help", "copyright", "credits" or "license" for more information.
+>>> import zlib
+>>> import ctypes
+>>> import time
+>>> time.time()
+9486.930260722
+>>>
+
+$ python3 -m ensurepip --default-pip # 初始化pip
+Installing collected packages: setuptools, pip
+Successfully installed pip-22.2.2 setuptools-63.2.0
+$ which pip3
+/root/yxj/SOFTWARE/libraries/bin/pip3
+$ pip3 -V
+pip 22.2.2 from /root/yxj/SOFTWARE/libraries/lib/python3.10/site-packages/pip (python 3.10)
 ```
 
 ## 参考资料
