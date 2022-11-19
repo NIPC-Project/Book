@@ -29,6 +29,7 @@ nav:
     - PYTHON/http-server.md
     - PYTHON/pypng.md
     - PYTHON/base64.md
+    - PYTHON/call-c.md
   - FPGA:
     - FPGA/blogs.md
   - 更多信息:
