@@ -15,3 +15,5 @@
 ![](images-221117/1.png)
 
 烧录完成之后，需要在 HiLinux 重启设备，使用 `reboot` 命令即可。
+
+注：重启之后，还需要使用 `insmod xdma.ko` 来加载 `xdma` 的内核，从而调用 `xdma_so.so` 动态库中的代码。

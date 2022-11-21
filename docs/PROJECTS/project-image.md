@@ -7,12 +7,10 @@
 ### HiLinux/FPGA 常驻程序
 
 - FPGA 随时处于就绪状态，能够随时执行YOLOv3算法
-    - 先使用 Vivado Program Device
+    - 先使用 Vivado Program Device 烧录设备
     - 再 `reboot` HiLinux
 - HiLinux 开启一个 HTTP server，监听 PC 传输图片数据
-    - 需要先加载 xdma 内核才能调用 xdma 的库
-        - `insmod xdma.ko`
-    - `./pcie-image.out`
+    - 注：需要先加载 xdma 内核才能调用 xdma 的库——`insmod xdma.ko`
 
 ### 整体网络传输
 
