@@ -60,11 +60,19 @@ Field Programmable Gate Array / 现场可编程逻辑门阵列
 
 <https://china.xilinx.com/products/design-tools/vivado.html>
 
+### DMA
+
+> Direct memory access (DMA) is a feature of computer systems and allows certain hardware subsystems to access main system memory independently of the central processing unit (CPU). -- <https://en.wikipedia.org/wiki/Direct_memory_access>
+
 ## Protocols
 
 ### SPI
 
 Serial Peripheral Interface / 串行外设接口
+
+### PCIe
+
+> PCI Express (Peripheral Component Interconnect Express), officially abbreviated as PCIe or PCI-e, is a high-speed serial computer expansion bus standard... It is the common motherboard interface for personal computers' graphics cards, hard disk drive host adapters, SSDs, Wi-Fi and Ethernet hardware connections. -- <https://en.wikipedia.org/wiki/PCI_Express>
 
 ## Others
 
