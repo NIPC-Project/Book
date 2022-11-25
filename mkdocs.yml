@@ -6,6 +6,7 @@ nav:
   - 工程:
     - PROJECTS/project-image.md
     - PROJECTS/project-video.md
+    - PROJECTS/system-plan.md
   - NIPC开发板:
     - NIPC/connect.md
     - NIPC/connect-camera.md

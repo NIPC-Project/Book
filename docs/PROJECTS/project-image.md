@@ -1,5 +1,7 @@
 # 单张图片处理
 
+代码请查看 <https://github.com/NIPC-Project/pcie-image>
+
 该项目的目的是从用户的电脑上读取一张图片，将其通过网络传输至HiLinux，HiLinux进一步将数据和指令传到FPGA，FPGA执行YOLOv3算法，得到识别结果传回HiLinux，通过网络传回用户电脑，在用户电脑上呈现识别结果。
 
 ## 整体架构
