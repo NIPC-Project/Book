@@ -31,6 +31,7 @@ nav:
     - PYTHON/pypng.md
     - PYTHON/base64.md
     - PYTHON/call-c.md
+    - PYTHON/call-c-char-pointer.md
   - FPGA:
     - FPGA/dma-hints.md
     - FPGA/blogs.md
