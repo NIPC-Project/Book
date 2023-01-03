@@ -4,12 +4,11 @@ site_name: NIPC毕设 # 左上角标题
 # [Navigtion]
 nav:
   - 工程:
-    - PROJECTS/project-image.md
-    - PROJECTS/project-video.md
-    - PROJECTS/system-plan.md
+    - PROJECTS/image-through.md
+    - PROJECTS/image-yolo.md
+    - PROJECTS/video-through.md
   - NIPC开发板:
-    - NIPC/connect.md
-    - NIPC/connect-camera.md
+    - NIPC/connect-network.md
   - HiLinux:
     - HILINUX/info.md
     - HILINUX/default-programs.md
@@ -37,6 +36,7 @@ nav:
     - FPGA/blogs.md
   - 更多信息:
     - MORE/glossary.md
+    - MORE/research-development.md
 
 # [UI]
 ## [top]

@@ -1,14 +1,12 @@
-# 单张图片处理
+# 图像+YOLO
 
-代码请查看 <https://github.com/NIPC-Project/pcie-image>
-
-该项目的目的是从用户的电脑上读取一张图片，将其通过网络传输至HiLinux，HiLinux进一步将数据和指令传到FPGA，FPGA执行YOLOv3算法，得到识别结果传回HiLinux，通过网络传回用户电脑，在用户电脑上呈现识别结果。
+该项目的目的是从用户的电脑上读取一张图片，将其通过网络传输至 HiLinux，HiLinux 进一步将数据和指令传到 FPGA，FPGA 执行 YOLOv3 算法，将得到识别结果传回 HiLinux，再通过网络传回用户电脑，最终在用户电脑上呈现识别结果。
 
 ## 整体架构
 
 ### HiLinux/FPGA 常驻程序
 
-- FPGA 随时处于就绪状态，能够随时执行YOLOv3算法
+- FPGA 随时处于就绪状态，能够随时执行 YOLOv3 算法
     - 先使用 Vivado Program Device 烧录设备
     - 再 `reboot` HiLinux
 - HiLinux 开启一个 HTTP server，监听 PC 传输图片数据
@@ -35,11 +33,11 @@
 
 #### PNG图片
 
-使用PNG标准生成的图片，不使用interlace。
+使用 PNG 标准生成的图片，不使用 interlace。
 
 #### 像素数组
 
-宽608高608的图片，共有608x608个像素，一维像素数组的长度为608x608x3，依次按行扫描存储R分量、G分量、B分量矩阵。
+宽 608 高 608 的图片，共有 `608x608` 个像素，一维像素数组的长度为 `608x608x3`，依次按行扫描存储 R 分量、G 分量、B 分量矩阵。
 
 注：`Python - bytes` `C - char[]`
 

@@ -46,7 +46,7 @@ bridge100: flags=8863<UP,BROADCAST,SMART,RUNNING,SIMPLEX,MULTICAST> mtu 1500
 
 ## HiLinux修改配置
 
-用 telnet 连接到板卡。这里请参考 [开发板连接电脑](../NIPC/connect.md)，使用另一路网线连接至开发板的网口。
+用 telnet 连接到板卡。这里请参考 [开发板连接电脑](../NIPC/connect-network.md)，使用另一路网线连接至开发板的网口。
 
 我这里使用的网络连接为 `AX88772A (192.168.10.123)` - `eth1 (192.168.10.68)`，使用 `telnet 192.168.10.68` 连接开发板。
 
