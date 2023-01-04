@@ -64,6 +64,38 @@ Field Programmable Gate Array / 现场可编程逻辑门阵列
 
 > Direct memory access (DMA) is a feature of computer systems and allows certain hardware subsystems to access main system memory independently of the central processing unit (CPU). -- <https://en.wikipedia.org/wiki/Direct_memory_access>
 
+## Video
+
+### SDI
+
+Serial Digital Interface / 数字分量串行接口
+
+- SD-SDI
+- HD-SDI 1080p30
+- 3G-SDI 1080p60
+- 6G-SDI
+- 12G-SDI
+
+### RF
+
+radio-frequency / 射频
+
+### BNC 接头
+
+Bayonet Nut Connector
+
+BNC 接头是监控工程中用于摄像设备输出时导线和摄像机的连接头，由 RGB 三原色信号及行同步、场同步五个独立信号接头组成。
+
+### SMA 接口
+
+SubMiniature version A
+
+SMA 接口有两种形式，标准的 SMA 是一端“外螺纹+孔”，另一端“内螺纹+针”；反极性 RP-SMA 是一端“外螺纹+针”，另一端为“内螺纹+孔”。
+
+### HDMI
+
+High Definition Multimedia Interface / 高清多媒体接口
+
 ## Protocols
 
 ### SPI
@@ -73,6 +105,10 @@ Serial Peripheral Interface / 串行外设接口
 ### PCIe
 
 > PCI Express (Peripheral Component Interconnect Express), officially abbreviated as PCIe or PCI-e, is a high-speed serial computer expansion bus standard... It is the common motherboard interface for personal computers' graphics cards, hard disk drive host adapters, SSDs, Wi-Fi and Ethernet hardware connections. -- <https://en.wikipedia.org/wiki/PCI_Express>
+
+### HTTP
+
+Hyper Text Transfer Protocol / 超文本传输协议
 
 ## Others
 
