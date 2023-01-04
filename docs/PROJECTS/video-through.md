@@ -1,7 +1,5 @@
 # 视频+直通
 
-> Work in Progress
-
 这个工程将摄像头接入 FPGA，然后将视频流数据不加任何处理传至 HiLinux，HiLinux 再传至 PC，PC 在屏幕上持续显示摄像头的画面。基于 Vivado 工程 pcie703SdiCameraDDRDemo。
 
 ## 摄像头
