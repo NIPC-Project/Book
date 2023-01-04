@@ -2,14 +2,7 @@
 
 > Work in Progress
 
-基于 pcie703SdiCameraDDRDemo
-
-这个工程将摄像头接入 FPGA，然后将视频流数据不加任何处理传至 HiLinux，HiLinux 再传至 PC，PC 在屏幕上持续显示摄像头的画面。
-
-**注**
-
-- 现阶段只考虑单 PC 查看摄像头实时的内容，不考虑单对多的直播。
-- 视频流可以被理解为时间上连续的多张单帧图像，也就是暂时不考虑视频编码。
+这个工程将摄像头接入 FPGA，然后将视频流数据不加任何处理传至 HiLinux，HiLinux 再传至 PC，PC 在屏幕上持续显示摄像头的画面。基于 Vivado 工程 pcie703SdiCameraDDRDemo。
 
 ## 摄像头
 
@@ -41,4 +34,35 @@
 
 ## NIPC-5 开发板接口
 
-TODO
+- FPGA
+    - 3G-SDI 输入 x 8（`IN0` / `IN1` / `IN2` / `IN3` / `IN4` / `IN5` / `IN6` / `IN7`）
+    - 3G-SDI 输出 x 2（`OUT0` / `OUT1`）
+- ARM
+    - HDMI x 1
+    - NET x 2（`NET`）
+
+## 单摄像头直通
+
+### 框图
+
+```mermaid
+flowchart LR
+    I00[SDI 相机\nPAL 1080p25] -- BNC母 / BNC公 --> I01[转换器\nBNC 转 SMA] -- IN0\nSMA公 / SMA母\n原始视频流输入 --> FPGA{FPGA}
+    FPGA -- OUT0\nSMA母 / SMA公\n原始视频流输出 --> O00[转换器\nSMA 转 BNC] -- BNC公 / BNC母 --> O01[转换器\nSDI 转 HDMI] -- HDMI母 / HDMI双头线 / HDMI母 --> O02[视频采集卡] -- USB口 --> O03{PC} -- OBS --> 屏幕
+    FPGA -- DMA --> ARM{ARM} -- 将每帧图像编码为JPEG\n递增序列号+JPEG数据打包使用UDP传出 --> O10{PC}
+    O10 -- 存储每帧图像--> O11[文件系统]
+    O10 -- Flutter\n按照顺序显示 --> O12[屏幕]
+```
+
+### 注意
+
+- 从 OUT0 输出的视频流用于调试。
+- 视频流可以被理解为时间上连续的多张单帧图像，也就是暂时不考虑视频编码。
+- JPEG 的编码压缩率应该可根据网络传输速率选择。
+- 现阶段只考虑单 PC 查看摄像头实时的内容，不考虑单对多的直播。
+
+## 双摄像头直通
+
+- 将上面的架构添加一路摄像头即可。SMA 射频输出口共两个，提供两个摄像头的直通视频流供调试使用。
+- 如果两路视频传回 PC 使用同一个端口，那么应该在 ARM 端将两帧图像合二为一。
+- 如果两路视频使用不同的端口，Flutter 应该添加按钮用来添加或删除视频流显示面板，每路视频选择各自的端口和存储路径。

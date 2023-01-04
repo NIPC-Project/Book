@@ -86,11 +86,16 @@ markdown_extensions:
   - pymdownx.highlight: # 代码块高亮
       # linenums: true # 显示行号
       # auto_title: true # 显示编程语言名称
-  - pymdownx.superfences # 代码块高亮插件
   - meta # 支持Markdown文件上方自定义标题标签等
   - admonition # https://squidfunk.github.io/mkdocs-material/reference/admonitions/#inline-blocks
   - pymdownx.details # admonition需要
-
+  - pymdownx.superfences:
+      # 代码块高亮插件
+      # 流程图插件 https://mermaid.js.org/intro/
+      custom_fences:
+        - name: mermaid
+          class: mermaid
+          format: !!python/name:pymdownx.superfences.fence_code_format
 extra_javascript:
   # latex支持
   # check https://squidfunk.github.io/mkdocs-material/reference/mathjax/?h=math for more information
