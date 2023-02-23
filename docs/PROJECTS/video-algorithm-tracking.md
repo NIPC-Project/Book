@@ -1,6 +1,78 @@
-# 固定场景实时选中跟踪
+# 视频+跟踪
 
 ## 数据结构
+
+### 固定场景下单个运动物体的实时跟踪
+
+```swift
+struct Frame {
+  // 只使用灰度进行计算
+  var data: FixedLengthArray<Byte>(1080*1920)
+}
+
+struct Object {
+  var position: Position
+  // 只记录物体的中心位置
+  struct Position {
+    var x: Uint // [0, 1080-1]
+    var y: Uint // [0, 1920-1]
+  }
+}
+
+struct Input {
+  var frame: Frame
+}
+
+struct Output {
+  var frame: Frame
+  // 一帧中可能有物体也可能没有
+  var object: Object?
+}
+
+struct Model {
+  // 背景的默认值设置为全黑就好了 后面会自动更新为真实的背景
+  var background: Frame
+  // 只保留上一帧的信息
+  var previousFrame: Frame
+  var previousObject: Object?
+
+  // 每40ms从摄像头拿到新的一帧时调用
+  func runAlgotithm(input: Input) -> Output {
+    let currentFrame: Frame = input.frame
+
+    let backgroundChanged: Bool = detectBackgroundChange(currentFrame: currentFrame, backgroud: self.background, previousFrame: self.previousFrame)
+    if backgroundChanged {
+      self.background = currentFrame
+    } else {
+      let currentObject: Object? = detectObject(currentFrame: currentFrame, backgroud: self.background, previousFrame: self.previousFrame, previousObject: self.previousObject)
+    }
+
+    self.previousFrame = currentFrame
+    self.previousObject = currentObject
+    let output = Output(frame: currentFrame, object: currentObject)
+    return Output(state: currentState)
+  }
+
+  func detectBackgroundChange(currentFrame: Frame, backgroud: Frame, previousFrame: Frame) -> Bool {
+    // 如果画面剧烈变化/整体变化，说明背景发生变化
+    if backgroundChanged {
+      return true
+    } else {
+      return false  
+    }
+  }
+
+  func detectObject(currentFrame: Frame, backgroud: Frame, previousFrame: Frame, previousObject: Object?) -> Object? {
+    if hasObject {
+      return Object(position: Position(x,y))
+    } else {
+      return null
+    }
+  }
+}
+```
+
+### 固定场景下多个运动物体的实时选中与跟踪
 
 ```swift
 struct Frame {
