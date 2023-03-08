@@ -117,3 +117,31 @@ libraries/
             ├── ffi_prep_cif_var.3
             └── zlib.3
 ```
+
+### libpng
+
+`compile-png.sh`:
+
+```sh
+#!/bin/bash
+ROOT_DIR="$HOME/Desktop/HiLinux"
+INSTALL_DIR="${ROOT_DIR}/libraries"
+mkdir -p $ROOT_DIR $INSTALL_DIR
+
+wget https://jaist.dl.sourceforge.net/project/libpng/libpng16/1.6.39/libpng-1.6.39.tar.xz
+tar xf libpng-1.6.39.tar.xz
+cd libpng-1.6.39/
+export cross=aarch64-himix200-linux
+CHOST="${cross}" CC="${cross}-gcc" CXX="${cross}-g++" AR="${cross}-ar" LD="${cross}-ld" RANLIB="${cross}-ranlib" CFLAGS="-I$INSTALL_DIR/include" CPPFLAGS="-I$INSTALL_DIR/include" LDFLAGS="-L$INSTALL_DIR/lib -L$INSTALL_DIR/lib64" ./configure --prefix=$INSTALL_DIR --host=${cross}
+make -j4 
+make install
+cd ..
+
+rm -rf libpng-1.6.39.tar.xz libpng-1.6.39/
+```
+
+```sh
+$ vim compile-ffi.sh
+$ chmod +x compile-zlib.sh
+$ ./compile-zlib.sh
+```
