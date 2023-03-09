@@ -2,9 +2,9 @@
 
 ## 相关链接
 
-- [Bilibili 讲解视频（最新版本）](TODO)
+- [Bilibili 讲解视频（最新版本）](https://www.bilibili.com/video/BV1yY41167Sr/)
 - [算法仿真 Python+OpenCV](https://github.com/NIPC-Project/edge-opencv)
-- [Vivado 工程文件夹](TODO)
+- [Vivado 工程文件夹](https://cloud.tsinghua.edu.cn/f/a84ccf1d24174b99a6ec/)
 - [HiLinux 端服务器 Python+ctypes](https://github.com/NIPC-Project/edge-hilinux)
 - [PC 客户端 Flutter](https://github.com/NIPC-Project/edge-pc)
 
