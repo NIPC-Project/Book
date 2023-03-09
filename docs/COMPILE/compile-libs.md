@@ -1,12 +1,12 @@
-# 交叉编译需要用到的库
-
-## 编译
+# 交叉编译必要库
 
 ```sh
 $ cd $HOME/Desktop/HiLinux
 ```
 
-### zlib
+## zlib
+
+所有与压缩相关的算法几乎都需要依赖底层的 `zlib`。
 
 `compile-zlib.sh`:
 
@@ -55,7 +55,9 @@ libraries/
             └── zlib.3
 ```
 
-### ffi
+## ffi
+
+Python 编译需要。
 
 ```sh
 #!/bin/bash
@@ -118,7 +120,9 @@ libraries/
             └── zlib.3
 ```
 
-### libpng
+## libpng
+
+项目中需要使用 `libpng` 对图像数据压缩之后再传输。
 
 `compile-png.sh`:
 

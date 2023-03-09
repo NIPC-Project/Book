@@ -1,4 +1,4 @@
-# Ubuntu安装HiLinux编译工具链
+# Ubuntu 安装 HiLinux 编译工具链
 
 首先从最简单的 C/C++ 入手。我们需要先安装 gcc/g++。
 

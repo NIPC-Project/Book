@@ -1,6 +1,6 @@
-# 交叉编译Python3.10.8
+# 交叉编译 Python3.10.8
 
-> 含pip/zlib/ffi
+> 此文构建的 Python 含 pip/zlib/ffi
 
 请使用 `Ubuntu 22.04`，这个版本测试成功编译。
 
@@ -74,7 +74,7 @@ $ ./compile-python.sh
 
 ## 安装
 
-按照 [设置环境变量](./set-env.md) 中的步骤进行安装。
+按照 [安装 libraries](./install-libs.md) 中的步骤进行安装。
 
 ## 查看效果
 

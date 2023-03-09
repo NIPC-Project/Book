@@ -19,9 +19,10 @@ nav:
     - HILINUX/shell-profile.md
   - HiLinux交叉编译:
     - COMPILE/install-compiler.md
-    - COMPILE/compile-lib.md
+    - COMPILE/compile-libs.md
     - COMPILE/compile-python.md
-    - COMPILE/set-env.md
+    - COMPILE/install-libs.md
+    - COMPILE/use-libpng.md
   - Vivado:
     - VIVADO/install.md
     - VIVADO/license.md
