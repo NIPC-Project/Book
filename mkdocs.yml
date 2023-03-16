@@ -15,7 +15,6 @@ nav:
     - HILINUX/info.md
     - HILINUX/default-programs.md
     - HILINUX/files.md
-    - HILINUX/internet-macos-sharing.md
     - HILINUX/shell-profile.md
   - HiLinux交叉编译:
     - COMPILE/install-compiler.md
