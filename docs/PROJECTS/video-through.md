@@ -47,8 +47,7 @@
 flowchart LR
     I00[SDI 相机\nPAL 1080p25] -- BNC母 / BNC公 --> I01[转换器\nBNC 转 SMA] -- IN0\nSMA公 / SMA母\n原始视频流输入 --> FPGA{FPGA\nBT1120_1080P_25Hz}
     FPGA -- OUT0\nSMA母 / SMA公\n原始视频流输出 --> O00[转换器\nSMA 转 BNC] -- BNC公 / BNC母 --> O01[转换器\nSDI 转 HDMI] -- HDMI母 / HDMI双头线 / HDMI母 --> O02[视频采集卡] -- USB口 --> O03{PC} -- OBS --> 屏幕
-    FPGA -- DMA\nAxiMM --> ARM{ARM} -- TCP传出\n一次传输传一帧 --> O10{PC}
-    O10 -- 将每帧图像编码为PNG\n存储每帧图像--> O11[文件系统]
+    FPGA -- DMA\nAxiMM --> ARM{ARM} -- 将每帧图像编码为PNG --> PNG --  TCP传出\n一次传输传一帧 --> O10{PC}
     O10 -- Flutter\n按照顺序显示 --> O12[屏幕]
 ```
 
