@@ -3,9 +3,13 @@ site_name: NIPC毕设 # 左上角标题
 
 # [Navigtion]
 nav:
+  - index.md
   - 目标跟踪工程:
-    - PROJECT-TRACKING/verilog-name.md
+    - PROJECT-TRACKING/regs.md
+    - PROJECT-TRACKING/variables.md
+    - PROJECT-TRACKING/procedure.md
     - PROJECT-TRACKING/blkmem-calculator.md
+    - PROJECT-TRACKING/verilog-name.md
   - 工程:
     - PROJECTS/image-through.md
     - PROJECTS/image-yolo.md
