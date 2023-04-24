@@ -2,30 +2,34 @@
 
 ## HiLinux 和 FPGA 的数据交互
 
-## init 阶段
+### init 阶段
 
 | HiLinux | FPGA |
 | - | - |
 | RW[0] 写 1 再写 0 |  |
 |  | 重置所有信号  准备开始一帧的处理 |
+| RW[1] 写 0 |  |
 | RW[2] 写 xc yc |  |
 | WriteMemory 首帧 |  |
 |  | 320x240 写满之后开始处理 |
 |  | 处理结束（写 Blkmem_ab） |
 |  | R[0] 写 1 |
+| 等待直到 R[0] 为 1 |  |
 
-## update 阶段
+### update 阶段
 
 | HiLinux | FPGA |
 | - | - |
-| 等待直到 R[0] 为 1 |  |
-| 读 R[1] 得到 xc yc |  |
 | RW[0] 写 1 再写 0 |  |
 |  | 重置所有信号  准备开始一帧的处理 |
+| RW[1] 写 1 |  |
 | WriteMemory 一帧 |  |
 |  | 320x240 写满之后开始处理 |
 |  | 处理结束（写 Blkmem_ab  R[1] 写 xc yc） |
 |  | R[0] 写 1 |
+| 如果图片处理完毕 break |  |
+| 等待直到 R[0] 为 1 |  |
+| 读 R[1] 得到 xc yc |  |
 
 ## FPGA 算法硬件实现
 
