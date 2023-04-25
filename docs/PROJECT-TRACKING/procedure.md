@@ -35,17 +35,19 @@
 
 ### init
 
-- 传入 320x240 灰度 8 bit 的 frame；使用 xc, yc 拿到尺寸为 w, h 的 f；f = f - 0.5；f = f · window；F = FFT(f)
+- 【rx】传入 320x240 灰度 8 bit 的 frame
+- 【cropfft】使用 xc, yc 拿到尺寸为 w, h 的 f；f = f - 0.5；f = f · window；F = FFT(f)
 - $A = K · F^*$，$B = F · F^*$
 
 ### update
 
+- 【rx】传入 320x240 灰度 8 bit 的 frame
 - 计算偏移
-    - 传入 320x240 灰度 8 bit 的 frame；使用 xc, yc 拿到尺寸为 w, h 的 f；f = f - 0.5；f = f · window；F = FFT(f)
-    - H = A / B
-    - G = H · F
-    - g = real(IFFT(G))
-    - 找到 g 中最大值的坐标、得到两帧间的偏移量更新 xc, yc
+    - 【cropfft】使用 xc, yc 拿到尺寸为 w, h 的 f；f = f - 0.5；f = f · window；F = FFT(f)
+    - 【h】H = A / B
+    - 【g】G = H · F
+    - 【ifft】g = real(IFFT(G))
+    - 【argmax】找到 g 中最大值的坐标、得到两帧间的偏移量更新 xc, yc
 - 更新状态
-    - 使用新的 xc, yc 拿到尺寸为 w, h 的 f；f = f - 0.5；f = f · window；F = FFT(f)
-    - $A = \eta\ (K · F^*) + (1 - \eta) * A$，$B = \eta\ (F · F^*) + (1 - \eta) * B$
+    - 【cropfft】使用新的 xc, yc 拿到尺寸为 w, h 的 f；f = f - 0.5；f = f · window；F = FFT(f)
+    - $A = \eta\ (K · F^*) + (1 - \eta)\ A$，$B = \eta\ (F · F^*) + (1 - \eta)\ B$
