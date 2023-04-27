@@ -44,9 +44,9 @@
 - 【rx】传入 320x240 灰度 8 bit 的 frame
 - 计算偏移
     - 【cropfft】使用 xc, yc 拿到尺寸为 w, h 的 f；f = f - 0.5；f = f · window；F = FFT(f)
-    - 【h】H = A / B
-    - 【g】G = H · F
-    - 【ifft】g = real(IFFT(G))
+    - 【h】H = A / B（与 cropfft 并行）
+    - 【g】G = F · H
+    - 【ifftreal】g = real(IFFT(G))
     - 【argmax】找到 g 中最大值的坐标、得到两帧间的偏移量更新 xc, yc
 - 更新状态
     - 【cropfft】使用新的 xc, yc 拿到尺寸为 w, h 的 f；f = f - 0.5；f = f · window；F = FFT(f)
